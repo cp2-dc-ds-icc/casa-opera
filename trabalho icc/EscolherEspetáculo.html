@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ópera Epiclese</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://static.wikia.nocookie.net/gensin-impact/images/f/f8/Icon_Opera_Epiclese.png/revision/latest?cb=20230820230508" type="image/jpeg" >
+    <script>
+        // Dados de filmes por dia
+        const filmesPorDia = {
+            "segunda": [
+                { nome: "Espetáculo 1", horario: "14:00" },
+                { nome: "Espetáculo 2", horario: "16:30" }
+            ],
+            "terca": [
+                { nome: "Espetáculo 3", horario: "14:00" },
+                { nome: "Espetáculo 4", horario: "17:00" }
+            ],
+            "quarta": [
+                { nome: "Espetáculo 5", horario: "15:00" },
+                { nome: "Espetáculo 6", horario: "18:00" }
+            ]
+        };
+
+        function atualizarFilmes(diaSelecionado) {
+            const listaFilmes = document.getElementById("listaFilmes");
+            listaFilmes.innerHTML = "";
+
+            if (filmesPorDia[diaSelecionado]) {
+                filmesPorDia[diaSelecionado].forEach(filme => {
+                    const filmeItem = document.createElement("div");
+                    filmeItem.classList.add("filme-item");
+                    filmeItem.innerHTML = `
+                        <p>${filme.nome} - ${filme.horario}</p>
+                        <p><button onclick="selecionarFilme('${filme.nome}', '${filme.horario}')">Escolher</button></p>
+                    `;
+                    listaFilmes.appendChild(filmeItem);
+                });
+            }
+        }
+
+        function selecionarFilme(nome, horario) {
+            if (typeof(Storage) !== "undefined") {
+                localStorage.setItem("EspetáculoEscolhido", nome);
+                localStorage.setItem("horarioEscolhido", horario);
+                window.location.href = "compraringresso.html"; // Redirecionamento para a página de compra
+            } else {
+                alert("Desculpe, seu navegador não suporta armazenamento local.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <nav>
+            <ul>
+                <a href="Início.html"><button class="button">Início</button></a>
+                <a href="EscolherEspetáculo.html"><button class="início">Escolher Espetáculo</button></a>
+                <a href="login.html"><button class="button">Login</button></a>
+                <a href="sobre.html"><button class="button">Sobre</button></a>
+            </ul>
+        </nav>
+     </center>
+    
+    <center><h2>Escolha um Dia e um Espetáculo</h2></center>
+
+    <div>
+        <button onclick="atualizarFilmes('segunda')">Segunda-feira</button>
+        <button onclick="atualizarFilmes('terca')">Terça-feira</button>
+        <button onclick="atualizarFilmes('quarta')">Quarta-feira</button>
+    </div>
+
+    <div id="listaFilmes"></div>
+</body>
+</html>

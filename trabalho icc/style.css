@@ -1,0 +1,113 @@
+
+body{  
+background-color: rgb(97, 65, 61);  
+}
+
+a{
+color:white;
+font-size: 20px;
+}
+
+.voltar{
+  float:  left;
+  font-size: 25px;
+}
+
+p{
+    color:white;
+    font-size: 25px;
+    text-align: center;
+}
+
+input[type=text]{  
+  
+  width: 50%;  
+  padding: 15px;  
+margin: 5px 0 22px 0;  
+display: inline-block;  
+ border: none;  
+ background: #f1f1f1;  
+}  
+
+input[type=password] { 
+  
+  width: 50%;  
+  padding: 15px;  
+margin: 5px 0 22px 0;  
+display: inline-block;  
+ border: none;  
+ background: #f1f1f1;  
+}
+
+input[type=email] { 
+  
+  width: 50%;  
+  padding: 15px;  
+margin: 5px 0 22px 0;  
+display: inline-block;  
+ border: none;  
+ background: #f1f1f1;  
+}
+
+
+
+ div {  
+  text-align: center;  
+}  
+  
+H2{
+  color:white;
+  font-size: 50px;
+}
+
+button {  
+  background-color: #49adf0;  
+  color: white;  
+  padding: 16px 20px;  
+ border: none;  
+  cursor: pointer;  
+ margin: 8px 0;  
+  width: 30%;  
+  opacity: 0.9; 
+}  
+  
+.button {
+  background-color: #49adf0;  
+  color: white;  
+  padding: 8px 10px;  
+ border: none;  
+  cursor: pointer;  
+ margin: 8px 0;  
+  width: 15%;  
+  opacity: 0.9;
+  transition: all 300ms ease-out  
+}
+
+.início{
+  background-color: #ffffff;  
+  color:#49adf0;  
+  padding: 8px 10px;  
+ border: none;  
+  cursor: pointer;  
+ margin: 8px 0;  
+  width: 15%;  
+  opacity: 0.9;
+  transition: all 300ms ease-out  
+}
+
+button:active {
+  background-color: white;
+  color:#49adf0;
+}
+
+.button:hover {
+  width: 20%;
+  height: 50%;
+ }
+
+.início:hover {
+  width: 20%;
+  height: 50%;
+ }
+
+  

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ópera Epiclese</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://static.wikia.nocookie.net/gensin-impact/images/f/f8/Icon_Opera_Epiclese.png/revision/latest?cb=20230820230508" type="image/jpeg" >
+</head>
+<script>
+    function carregarFilme() {
+        const Espetáculo = localStorage.getItem("EspetáculoEscolhido") || "Nenhum Espetáculo selecionado";
+        const horario = localStorage.getItem("horarioEscolhido") || "Sem horário definido";
+        document.getElementById("EspetáculoEscolhido").innerText = Espetáculo;
+        document.getElementById("horarioEscolhido").innerText = horario;
+    }
+
+    function comprarIngresso() {
+        alert("Compra realizada com sucesso para " + document.getElementById("EspetáculoEscolhido").innerText);
+    }
+
+    window.onload = carregarFilme;
+</script>
+<body>
+    <a href="início.html" class="voltar">Voltar</a>
+
+<center><h2>Confirmar Compra</h2></center>
+<p>Espetáculo escolhido: <strong id="EspetáculoEscolhido"></strong></p>
+<p>Horário: <strong id="horarioEscolhido"></strong></p>
+<p><button onclick="comprarIngresso()">Comprar Ingresso</button></p>
+
+</body>
+</html>
